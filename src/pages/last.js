@@ -1,6 +1,13 @@
 import React from 'react';
-import {View} from 'react-native';
+import MainView from '../components/MainView';
+import BigText from '../components/BigText';
 
-const last = () => <View style={{flex: 1, backgroundColor: 'grey'}}></View>;
+function Last({}) {
+  return (
+    <MainView>
+      <BigText>Seu Produto final foi 5. Parabens! </BigText>
+    </MainView>
+  );
+}
 
-export default last;
+export default Last;

@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {TouchableOpacity} from 'react-native';
+import {secondary, third} from '../utils/colors';
 
 const StyledCircleView = styled.View`
-  background-color: #ebebe0;
+  background-color: ${secondary};
   width: 200px;
   height: 200px;
   border-radius: 200px;
   align-items: center;
   justify-content: center;
-  border-color: grey;
+  border-color: ${third};
   border-width: 4px;
 `;
 

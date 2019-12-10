@@ -11,13 +11,23 @@ import {primary} from './src/utils/colors';
 
 const EndNavigator = createStackNavigator(
   {
-    result: {screen: result},
-    last: {screen: last},
+    result: {
+      screen: result,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    last: {
+      screen: last,
+      navigationOptions: {
+        title: 'Nova Tela',
+      },
+    },
   },
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: 'green',
+        backgroundColor: primary,
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -26,22 +36,22 @@ const EndNavigator = createStackNavigator(
     },
   },
 );
-
+const ICON_SIZE = 26;
 const AppTabs = createBottomTabNavigator(
   {
     page3: {
       screen: page3,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
-          <Icon name="database" size={26} color={tintColor} />
+          <Icon name="database" size={ICON_SIZE} color={tintColor} />
         ),
       },
     },
     page5: {
       screen: page5,
       navigationOptions: {
-        tabBarIcon: ({tintColor, focused}) => (
-          <Icon name="user" size={26} color={tintColor} />
+        tabBarIcon: ({tintColor}) => (
+          <Icon name="user" size={ICON_SIZE} color={tintColor} />
         ),
       },
     },
@@ -49,7 +59,7 @@ const AppTabs = createBottomTabNavigator(
       screen: EndNavigator,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
-          <Icon name="file" size={26} color={tintColor} />
+          <Icon name="file" size={ICON_SIZE} color={tintColor} />
         ),
       },
     },
