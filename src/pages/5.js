@@ -1,6 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import Circle from '../components/Circle';
+import MainView from '../components/MainView';
+import {primary} from '../utils/colors';
 
-const page5 = () => <View style={{flex: 1, backgroundColor: 'green'}}></View>;
+const page5 = () => (
+  <MainView>
+    <Circle number="5" />
+  </MainView>
+);
 
 export default page5;
