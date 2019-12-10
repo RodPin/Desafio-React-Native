@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {TouchableOpacity} from 'react-native';
 import {secondary, third} from '../utils/colors';
+import {times} from '../redux/reducers';
+import {useDispatch} from 'react-redux';
 
 const StyledCircleView = styled.View`
   background-color: ${secondary};
@@ -18,12 +20,16 @@ const BigText = styled.Text`
   font-size: 50px;
 `;
 
-const Circle = ({number, onPress}) => (
-  <TouchableOpacity onPress={onPress}>
-    <StyledCircleView>
-      <BigText>{number}</BigText>
-    </StyledCircleView>
-  </TouchableOpacity>
-);
+function Circle({number, onPress}) {
+  const dispatch = useDispatch();
+
+  return (
+    <TouchableOpacity onPress={() => dispatch(times(number))}>
+      <StyledCircleView>
+        <BigText>{number}</BigText>
+      </StyledCircleView>
+    </TouchableOpacity>
+  );
+}
 
 export default Circle;
